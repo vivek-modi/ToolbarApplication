@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/consultations_search_edit_text_rounded_corner.xml" value="0.1475" />
         <entry key="app/src/main/res/drawable/consultations_search_edit_text_selected.xml" value="0.1475" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35" />
-        <entry key="app/src/main/res/layout/tool_bar_layout.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/tool_bar_layout.xml" value="0.25" />
       </map>
     </option>
   </component>

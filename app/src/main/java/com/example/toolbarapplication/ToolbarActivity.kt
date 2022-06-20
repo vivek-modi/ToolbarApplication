@@ -17,12 +17,16 @@ class ToolbarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ToolBarLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        hideActionBar()
+        actionBar()
         setupSearchView()
     }
 
-    fun hideActionBar() {
-        supportActionBar?.hide()
+    fun actionBar() {
+        binding.toolbar.apply {
+            setSupportActionBar(this)
+            supportActionBar?.title = null
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
     }
 
     fun setupSearchView() {
@@ -37,14 +41,6 @@ class ToolbarActivity : AppCompatActivity() {
             })
             setOnQueryTextFocusChangeListener { view, hasFocus ->
                 binding.appBar.setExpanded(!hasFocus)
-                if (hasFocus) {
-                    binding.toolbar.apply {
-                        setSupportActionBar(this)
-                        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-                    }
-                }else{
-                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
-                }
                 isSelected = hasFocus
             }
         }
