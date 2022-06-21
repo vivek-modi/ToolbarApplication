@@ -11,9 +11,10 @@ import androidx.appcompat.widget.SearchView
 import com.example.toolbarapplication.databinding.ToolBarLayoutBinding
 import com.google.android.material.appbar.CollapsingToolbarLayout
 
-private lateinit var binding: ToolBarLayoutBinding
-
 class ToolbarActivity : AppCompatActivity() {
+
+    private lateinit var binding: ToolBarLayoutBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ToolBarLayoutBinding.inflate(layoutInflater)
