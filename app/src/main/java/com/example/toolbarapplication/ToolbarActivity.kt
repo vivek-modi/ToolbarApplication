@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.example.toolbarapplication.databinding.ToolBarLayoutBinding
 import com.google.android.material.appbar.CollapsingToolbarLayout
@@ -47,11 +46,13 @@ class ToolbarActivity : CartActivity() {
                 binding.appBar.setExpanded(!hasFocus)
                 isSelected = hasFocus
                 if (hasFocus) {
-                  binding.toolbarTitle.visibility = View.GONE
+                    binding.toolbarTitle.visibility = View.GONE
                     params.marginStart = originalMargin + 150 // arbitrary constant
+                    menuView?.visibility = View.GONE
                 } else {
                     binding.toolbarTitle.visibility = View.VISIBLE
                     params.marginStart = originalMargin
+                    menuView?.visibility = View.VISIBLE
                 }
                 view.layoutParams = params
             }
