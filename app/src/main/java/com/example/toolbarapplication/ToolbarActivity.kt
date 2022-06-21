@@ -22,15 +22,13 @@ class ToolbarActivity : AppCompatActivity() {
         setupSearchView()
     }
 
-    fun actionBar() {
-        binding.toolbar.apply {
-            setSupportActionBar(this)
-            supportActionBar?.title = null
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
+    private fun actionBar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
-    fun setupSearchView() {
+    private fun setupSearchView() {
         var originalMargin = 0
         binding.consultationSearchView.apply {
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -48,8 +46,10 @@ class ToolbarActivity : AppCompatActivity() {
                 binding.appBar.setExpanded(!hasFocus)
                 isSelected = hasFocus
                 if (hasFocus) {
+                  binding.toolbarTitle.visibility = View.GONE
                     params.marginStart = originalMargin + 150 // arbitrary constant
                 } else {
+                    binding.toolbarTitle.visibility = View.VISIBLE
                     params.marginStart = originalMargin
                 }
                 view.layoutParams = params
