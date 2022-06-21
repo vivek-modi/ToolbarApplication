@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.toolbarapplication.databinding.ToolBarLayoutBinding
 import com.google.android.material.appbar.CollapsingToolbarLayout
 
@@ -26,6 +27,16 @@ class ToolbarActivity : CartActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        binding.appBar.post {
+            supportActionBar?.height?.let {
+                val appBarLayoutParams = binding.appBar.layoutParams as CoordinatorLayout.LayoutParams
+                appBarLayoutParams.width = appBarLayoutParams.width
+                appBarLayoutParams.height = (2 * it) +
+                        resources.getDimensionPixelSize(R.dimen.top_margin) +
+                        resources.getDimensionPixelSize(R.dimen.search_view_top_margin)
+                binding.appBar.layoutParams = appBarLayoutParams
+            }
+        }
     }
 
     private fun setupSearchView() {
