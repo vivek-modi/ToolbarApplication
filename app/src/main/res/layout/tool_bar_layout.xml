@@ -10,7 +10,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
+        android:animateLayoutChanges="true"
         android:backgroundTint="#FFC04A"
         android:fitsSystemWindows="true"
         android:gravity="bottom">
@@ -38,14 +39,14 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:titleTextColor="@android:color/white" >
+                android:layout_marginTop="20dp"
+                app:layout_collapseMode="pin">
 
                 <TextView
                     android:id="@+id/toolbarTitle"
-                    android:text="Toolbar Application"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Toolbar Application" />
 
             </androidx.appcompat.widget.Toolbar>
 
