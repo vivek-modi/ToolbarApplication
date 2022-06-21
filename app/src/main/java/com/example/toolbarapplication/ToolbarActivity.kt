@@ -11,7 +11,7 @@ import androidx.appcompat.widget.SearchView
 import com.example.toolbarapplication.databinding.ToolBarLayoutBinding
 import com.google.android.material.appbar.CollapsingToolbarLayout
 
-class ToolbarActivity : AppCompatActivity() {
+class ToolbarActivity : CartActivity() {
 
     private lateinit var binding: ToolBarLayoutBinding
 
